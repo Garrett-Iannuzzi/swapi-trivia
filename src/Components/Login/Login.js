@@ -20,15 +20,18 @@ class Login extends Component {
 
   loginErrorHandler = () => {
     const { name, quote, skillLevel } = this.state;
+    const { handleUserInfo, handleLoginError } = this.props;
+
     if (name === '' || quote === '' || skillLevel === '') {
-      this.props.handleLoginError(true)
+      handleLoginError(true)
     } else {
-      this.props.handleUserInfo(this.state);
-      this.props.handleLoginError(false)
+      handleUserInfo(this.state);
+      handleLoginError(false)
     }
   }
 
   render() {
+    const { name, quote, skillLevel } = this.state;
       return (
         <main className="main-login">
           <img src={images.starWarsLogo} alt="star wars logo" className="Login-logo" />
@@ -38,7 +41,7 @@ class Login extends Component {
                 type='text'
                 maxLength='25'
                 name='name'
-                value={this.state.name}
+                value={name}
                 placeholder='Enter Name'
                 className='input-login input-login-name'
                 onChange={ (e) => this.handleChange(e) }
@@ -47,7 +50,7 @@ class Login extends Component {
                 type='text'
                 maxLength='65'
                 name='quote'
-                value={this.state.quote}
+                value={quote}
                 placeholder='Enter Favorite StarWars Quote'
                 className='input-login input-login-quote'
                 onChange={ (e) => this.handleChange(e) }
@@ -56,7 +59,7 @@ class Login extends Component {
               <label for="skill">Skill Level:</label>
               <select
                 id='skill'
-                value={this.state.skillLevel}
+                value={skillLevel}
                 name='skillLevel'
                 className='input-select input-login-skill'
                 onChange={ (e) => this.handleChange(e) }
@@ -81,5 +84,3 @@ Login.propTypes = {
   handleLoginError: PropTypes.func,
   handleUserInfo: PropTypes.func
 }
-
-//test
