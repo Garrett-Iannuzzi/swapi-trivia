@@ -25,7 +25,6 @@ class Login extends Component {
     } else {
       this.props.handleUserInfo(this.state);
       this.props.handleLoginError(false)
-
     }
   }
 
@@ -82,3 +81,5 @@ Login.propTypes = {
   handleLoginError: PropTypes.func,
   handleUserInfo: PropTypes.func
 }
+
+//test
