@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import images from '../.././images/images.js';
 import { Link } from 'react-router-dom';
 
-const CharacterCard = ({ character, creature, name, openingCrawl, population, relatedFilms, species, resetCharacters, handleFavorites }) => {
+const CharacterCard = ({ character, creature, name, population, relatedFilms, species, resetCharacters, handleFavorites }) => {
   const films = relatedFilms.map((film, index) => <p className='h2-relatedFilm' key={index}>{film.relatedFilms}</p>);
   const characterInfo = {
     character: character,
@@ -18,7 +18,7 @@ const CharacterCard = ({ character, creature, name, openingCrawl, population, re
     <article className='character-card'>
       <header className='header-character'>
         <h2 className='h2-character-header'>{character}</h2>
-        <button className='button-favorites' onClick={ () => {handleFavorites(characterInfo)} }>
+        <button className='button-favorites' onClick={ () => { handleFavorites(characterInfo) } }>
           <img className='favorites-img' src={images.heart} alt='heart icon for favorites' />
         </button>
       </header>
@@ -31,7 +31,7 @@ const CharacterCard = ({ character, creature, name, openingCrawl, population, re
             {films}
       </section>
       <Link to='/movies' className='link-back-movies'>
-        <button className='button-movies' onClick={() => resetCharacters()}>Return to Movies</button>
+        <button className='button-movies' onClick={ () => resetCharacters() }>Return to Movies</button>
       </Link>
     </article>
   )
