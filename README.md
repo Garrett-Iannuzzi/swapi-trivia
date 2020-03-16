@@ -6,13 +6,19 @@
 ### Setup:
 
 1) You can clone down this repo and run: 
-  ```npm install```
+  ```
+    npm install
+  ```
 
 2) To verify that it is setup correctly, run 
-  ```npm start``` 
+  ```
+    npm start
+  ``` 
   
 3) In your terminal. Go to 
-  ```http://localhost:3000/``` 
+  ```
+    http://localhost:3000/
+  ``` 
   
 4) You should see a page asking for login information. 
 
